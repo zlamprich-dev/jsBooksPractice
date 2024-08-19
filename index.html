@@ -11,14 +11,21 @@
       <input id="addBookField" type="text" placeholder="Book Title" /><button
         onclick="addToLibrary()"
       >
-        Add Book Title to Library
+        Add Book Title to Library</button
+      ><button id="newBook" onclick="libraryLoop()">
+        Show Current Inventory
       </button>
-      <br />
-      <button id="newBook" onclick="newBook()">Create New Book</button>
-      <div id="formDiv"></div>
     </div>
 
-    <div id="displayArea"><h1>Library</h1></div>
+    <div id="displayArea">
+      <h1>Your Library</h1>
+      <table id="booksTable">
+        <tr>
+          <th>Book Inventory</th>
+        </tr>
+        <tr id="bookInfo"></tr>
+      </table>
+    </div>
 
     <script src="booksJS.js"></script>
   </body>
