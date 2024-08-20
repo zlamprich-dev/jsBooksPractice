@@ -18,7 +18,7 @@
       <h1>Your Library</h1>
       <div class="cards"></div>
     </div>
-    <div id="overlay" onclick="off()">
+    <div id="overlay">
       <div id="cardPopup">
         <form id="bookForm">
           <label for="authorName">Author Name:</label><br />
@@ -26,25 +26,41 @@
             type="text"
             id="authorName"
             name="authorName"
-            value="Mark Twain"
+            placeholder="Mark Twain"
           /><br />
           <label for="bookTitle">Book Title</label><br />
           <input
             type="text"
             id="bookTitle"
             name="bookTitle"
-            value="Lord of the Rings"
+            placeholder="Lord of the Rings"
           /><br /><label for="pagesRead"># of Pages Read</label><br />
           <input
             type="text"
             id="pagesRead"
             name="pagesRead"
-            value="# of Pages Read"
+            placeholder="# of Pages Read"
           /><br />
-          <p id="yesOrNoTitle">Have you Read This?
-            <p id="yesOrNo">Yes</p>
-          </p>
-          <input type="submit" value="Submit" />
+          <fieldset id="formRadioButtons">
+            <legend><p id="yesOrNoTitle">Have you Read This Book?</p></legend>
+              <div>
+                <input
+                  type="radio"
+                  id="yesRead"
+                  name="readStatus"
+                  value="yes"
+                />
+                <label for="yesRead">Yes</label>
+              </div>
+              <div>
+                <input type="radio" id="noRead" name="readStatus" value="no" />
+                <label for="noRead">No</label>
+              </div>
+          </fieldset>
+          <div id="formButtons">
+            <button type="button" onclick="off()">Submit</button>
+            <button type="button" onclick="off()">Close Form</button>
+          </div>
         </form>
       </div>
     </div>
