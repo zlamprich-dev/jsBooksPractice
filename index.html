@@ -8,10 +8,7 @@
   </head>
   <body>
     <div id="bookFunctions">
-      <input id="addBookField" type="text" placeholder="Book Title" /><button
-        onclick="addToLibrary()"
-      >
-        Add Book Title to Library</button
+      <button onclick="overlayOn()">Add New Book</button
       ><button id="newBook" onclick="libraryLoop()">
         Show Current Inventory
       </button>
@@ -19,12 +16,37 @@
 
     <div id="displayArea">
       <h1>Your Library</h1>
-      <table id="booksTable">
-        <tr>
-          <th>Book Inventory</th>
-        </tr>
-        <tr id="bookInfo"></tr>
-      </table>
+      <div class="cards"></div>
+    </div>
+    <div id="overlay" onclick="off()">
+      <div id="cardPopup">
+        <form id="bookForm">
+          <label for="authorName">Author Name:</label><br />
+          <input
+            type="text"
+            id="authorName"
+            name="authorName"
+            value="Mark Twain"
+          /><br />
+          <label for="bookTitle">Book Title</label><br />
+          <input
+            type="text"
+            id="bookTitle"
+            name="bookTitle"
+            value="Lord of the Rings"
+          /><br /><label for="pagesRead"># of Pages Read</label><br />
+          <input
+            type="text"
+            id="pagesRead"
+            name="pagesRead"
+            value="# of Pages Read"
+          /><br />
+          <p id="yesOrNoTitle">Have you Read This?
+            <p id="yesOrNo">Yes</p>
+          </p>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
     </div>
 
     <script src="booksJS.js"></script>
