@@ -33,8 +33,9 @@ function off() {
 
 function addToLibrary() {
     let input = createBook()
-
-
+    myLibrary.push(input)
+    document.getElementById("addBookField").value = ""
+    console.log(input)
 }
 
 function libraryLoop() {
