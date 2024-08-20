@@ -1,16 +1,26 @@
 const myLibrary = [];
-let clickState = false
-
 
 
 function createBook() {
-    let x = document.getElementById("overlay")
-    if (!clickState) {
+    let readStatus
+    let authorNameInput = document.getElementById("authorName").value
+    let titleInput = document.getElementById("bookTitle").value
+    let pagesRead = document.getElementById("pagesRead").value
+    let readStatusYes = document.getElementById("yesRead")
 
-        x.style.display = "boxed"
+    if (readStatusYes.checked) {
+        readStatus = "Yes"
+    } else { readStatus = "No" }
+
+    const book = {
+        author: authorNameInput,
+        title: titleInput,
+        pagesRead: pagesRead,
+        readStatus: readStatus
     }
-    x.style.display = "none"
 
+    
+    console.log(myLibrary)
 }
 
 function overlayOn() {
@@ -22,11 +32,9 @@ function off() {
 }
 
 function addToLibrary() {
-    let input = document.getElementById("addBookField").value
+    let input = createBook()
 
-    myLibrary.push(input)
-    document.getElementById("addBookField").value = ""
-    console.log(input)
+
 }
 
 function libraryLoop() {
