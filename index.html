@@ -7,42 +7,45 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div id="bookFunctions">
-      <button onclick="overlayOn()">Add New Book</button
-      ><button id="newBook" onclick="libraryLoop()">
-        Show Current Inventory
-      </button>
-    </div>
+    <div id="content">
+      <div id="headerDiv">
+        <div id="bookFunctions">
+          <h1>The Library</h1>
+          <button onclick="overlayOn()">Add New Book</button
+          ><button id="newBook" onclick="libraryLoop()">
+            Show Current Inventory
+          </button>
+        </div>
+      </div>
 
-    <div id="displayArea">
-      <h1>Your Library</h1>
-      <div class="cards"></div>
-    </div>
-    <div id="overlay">
-      <div id="cardPopup">
-        <form id="bookForm">
-          <label for="authorName">Author Name:</label><br />
-          <input
-            type="text"
-            id="authorName"
-            name="authorName"
-            placeholder="Mark Twain"
-          /><br />
-          <label for="bookTitle">Book Title</label><br />
-          <input
-            type="text"
-            id="bookTitle"
-            name="bookTitle"
-            placeholder="Lord of the Rings"
-          /><br /><label for="pagesRead"># of Pages Read</label><br />
-          <input
-            type="text"
-            id="pagesRead"
-            name="pagesRead"
-            placeholder="# of Pages Read"
-          /><br />
-          <fieldset id="formRadioButtons">
-            <legend><p id="yesOrNoTitle">Have you Read This Book?</p></legend>
+      <div id="displayArea">
+        <div class="cards"></div>
+      </div>
+      <div id="overlay">
+        <div id="cardPopup">
+          <form id="bookForm">
+            <label for="authorName">Author Name:</label><br />
+            <input
+              type="text"
+              id="authorName"
+              name="authorName"
+              placeholder="Ex: Mark Twain"
+            /><br />
+            <label for="bookTitle">Book Title</label><br />
+            <input
+              type="text"
+              id="bookTitle"
+              name="bookTitle"
+              placeholder="Ex: Lord of the Rings"
+            /><br /><label for="pagesRead"># of Pages Read</label><br />
+            <input
+              type="text"
+              id="pagesRead"
+              name="pagesRead"
+              placeholder="Ex: 125"
+            /><br />
+            <fieldset id="formRadioButtons">
+              <legend><p id="yesOrNoTitle">Have you Read This Book?</p></legend>
               <div>
                 <input
                   type="radio"
@@ -56,15 +59,15 @@
                 <input type="radio" id="noRead" name="readStatus" value="no" />
                 <label for="noRead">No</label>
               </div>
-          </fieldset>
-          <div id="formButtons">
-            <button type="button" onclick="off()">Submit</button>
-            <button type="button" onclick="off()">Close Form</button>
-          </div>
-        </form>
+            </fieldset>
+            <div id="formButtons">
+              <button type="button" onclick="off()">Submit</button>
+              <button type="button" onclick="off()">Close Form</button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-
     <script src="booksJS.js"></script>
   </body>
 </html>
