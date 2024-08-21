@@ -12,15 +12,11 @@
         <div id="bookFunctions">
           <h1>The Library</h1>
           <button onclick="overlayOn()">Add New Book</button
-          ><button id="newBook" onclick="libraryLoop()">
-            Show Current Inventory
-          </button>
+          ><button id="newBook" onclick="">Show Current Inventory</button>
         </div>
       </div>
 
-      <div id="displayArea">
-        <div class="cards"></div>
-      </div>
+      <div id="displayArea"></div>
       <div id="overlay">
         <div id="cardPopup">
           <form id="bookForm">
@@ -61,7 +57,9 @@
               </div>
             </fieldset>
             <div id="formButtons">
-              <button type="button" onclick="createBook()">Submit</button>
+              <button type="button" onclick="createBook(), libraryLoop()">
+                Submit
+              </button>
               <button type="button" onclick="off()">Close Form</button>
             </div>
           </form>

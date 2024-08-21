@@ -1,6 +1,5 @@
 const myLibrary = [];
 
-
 function createBook() {
     let readStatus
     let authorNameInput = document.getElementById("authorName").value
@@ -16,10 +15,9 @@ function createBook() {
         author: authorNameInput,
         title: titleInput,
         pagesRead: pagesRead,
-        readStatus: readStatus
+        hasReadBook: readStatus
     }
-
-    
+    myLibrary.push(book)
     console.log(myLibrary)
 }
 
@@ -31,22 +29,40 @@ function off() {
     document.getElementById("overlay").style.display = "none";
 }
 
-function addToLibrary() {
-    let input = createBook()
-    myLibrary.push(input)
-    document.getElementById("addBookField").value = ""
-    console.log(input)
-}
-
 function libraryLoop() {
-    let table = document.getElementById("bookInfo")
+    let displayArea = document.getElementById("displayArea")
+
 
     for (let i = 0; i <= myLibrary.length - 1; i++) {
-        let books = myLibrary[i]
-        let tableRows = document.createElement("tr")
-        table.append(tableRows)
-        tableRows.append(books)
+        if (myLibrary[i].title in myLibrary) {
+            console.log(myLibrary[i].title + "Already Exists!")
+        }
 
-        console.log(myLibrary[i])
+        createBookCard(i)
+    }
+
+    function createBookCard(i) {
+        let bookCardClass = document.createElement("div")
+        bookCardClass.setAttribute("class", `cards`)
+
+        displayArea.append(bookCardClass)
+
+        let bookCardContent = document.createElement("div")
+        bookCardContent.setAttribute("id", `cardContent`)
+
+        bookCardClass.append(bookCardContent)
+
+        let bookTitle = document.createElement("p")
+        let bookAuthor = document.createElement("p")
+        let bookPagesRead = document.createElement("p")
+        let bookReadStatus = document.createElement("p")
+
+        bookCardContent.append(bookTitle, bookAuthor, bookPagesRead, bookReadStatus)
+
+        bookAuthor.textContent = "Author: " + myLibrary[i].author
+        bookTitle.textContent = myLibrary[i].title
+        bookPagesRead.textContent = "Pages Read: " + myLibrary[i].pagesRead
+        bookReadStatus.textContent = "Finished Book? " + myLibrary[i].hasReadBook
+
     }
 }
