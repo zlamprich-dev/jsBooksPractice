@@ -18,8 +18,8 @@ function createBook() {
 
     if (titleExists) {
         console.log(titleInput + " already exists in the library!");
-        alert(titleInput + " already exists in the library!"); 
-        return; 
+        alert(titleInput + " already exists in the library!");
+        return;
     }
 
     const book = {
@@ -31,7 +31,7 @@ function createBook() {
 
     myLibrary.push(book);
     console.log(myLibrary);
-    addBookToDisplay(book); 
+    addBookToDisplay(book);
 }
 
 function addBookToDisplay(book) {
@@ -62,9 +62,18 @@ function addBookToDisplay(book) {
 
 function libraryLoop() {
     let displayArea = document.getElementById("displayArea");
-    displayArea.innerHTML = ''; 
+    displayArea.innerHTML = '';
 
     for (let i = 0; i < myLibrary.length; i++) {
         addBookToDisplay(myLibrary[i]);
     }
 }
+
+function overlayOn() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+
